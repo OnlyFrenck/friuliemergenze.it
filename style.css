@@ -28,6 +28,27 @@ h1 {
   margin: 0 auto;
 }
 
+.instagram {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #111; /* sfondo scuro */
+  color: #f0f0f0;
+}
+
+.instagram h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00bcd4; /* azzurro coerente */
+}
+
+.instagram .elfsight-app-41ecf671-9546-44ba-8d06-bdd3abe5db96 {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
 a {
   color: #00bcd4;
   text-decoration: none;
