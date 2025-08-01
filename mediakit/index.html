@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Kit - Friuli Emergenze</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery" class="nav-link">Galleria</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://wa.me/393276538156" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="mediakit">
+    <header>
+      <h1>📦 Media Kit</h1>
+      <p>Materiale ufficiale per stampa, media, sponsor e collaboratori</p>
+    </header>
+
+    <section class="about">
+      <div class="content">
+        <h2>📝 Descrizione del progetto</h2>
+        <p>Friuli Emergenze è una realtà nata per documentare, valorizzare e diffondere la conoscenza dei mezzi di soccorso operativi nel Friuli Venezia Giulia. Attraverso fotografie, video e collaborazioni con enti locali, raccontiamo il lavoro quotidiano di chi salva vite.</p>
+      </div>
+    </section>
+
+    <section class="assets">
+      <div class="content">
+        <h2>🎨 Logo & Identità visiva</h2>
+        <p>Puoi scaricare il nostro logo ufficiale per utilizzo su stampa, articoli e materiale digitale. Disponibile in versione PNG e SVG.</p>
+        <ul>
+          <li>
+            <a href="https://friuliemergenze.it/assets/loghi/friuliemergenze-logo.png" download="/assets/loghi/logo-friuliemergenze.png" type="image/png">
+              <i class="fas fa-download"></i> 📁 Scarica logo PNG
+            </a>
+          </li>
+          <li>
+            <a href="https://friuliemergenze.it/assets/loghi/friuliemergenze-logo.svg" download="/assets/loghi/logo-friuliemergenze.svg" type="image/png">
+              <i class="fas fa-download"></i> 📁 Scarica logo SVG
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="content">
+        <h2>📊 Dati & copertura</h2>
+        <ul>
+          <li>📷 Oltre 5 foto pubblicate</li>
+          <li>📈 Crescita follower costante su Instagram</li>
+          <li>🤝 Collaborazioni attive con enti locali</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="content">
+        <h2>📬 Contatti per media & partnership</h2>
+        <p>✉️ <a href="mailto:press@friuliemergenze.it">press@friuliemergenze.it</a></p>
+        <p>📞 <a href="https://wa.me/393276538156">Contatto WhatsApp</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Applica il fade-in all'avvio
+    document.body.classList.add('fade-in');
+
+    // Aggiunge effetto fade-out prima del cambio pagina
+    document.querySelectorAll('a[href]').forEach(link => {
+      const target = link.getAttribute('target');
+      if (!target || target === '_self') {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300); // deve combaciare con la durata di fadeOut
+        });
+      }
+    });
+  </script>
+
+  <script>
+    // Toggle mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Evidenziazione pagina attiva
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      if (link.href === window.location.href || window.location.pathname.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
