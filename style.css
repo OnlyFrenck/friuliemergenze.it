@@ -380,3 +380,105 @@ a i.fas {
     opacity: 0;
   }
 }
+
+.spotters-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.spotters-page header {
+  margin-bottom: 2rem;
+}
+
+.spotters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.spotter-card {
+  background-color: #121212;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+  text-align: center;
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.spotter-card:hover {
+  transform: translateY(-5px);
+}
+
+.spotter-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.spotter-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  color: #00bcd4;
+}
+
+.spotter-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.ig-link {
+  display: inline-block;
+  color: #f0f0f0;
+  background-color: #e1306c;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.ig-link:hover {
+  background-color: #c72c61;
+}
+
+.cta-spotter {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 1rem;
+  color: #f0f0f0;
+}
+
+.cta-spotter h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00bcd4;
+}
+
+.cta-spotter p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1ebc5a;
+}
