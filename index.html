@@ -18,7 +18,7 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/gallery" class="nav-link">Galleria</a></li>
         <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
@@ -61,11 +61,6 @@
         <div class="grid-item">
             <img src="assets/mezzi/sierra276-sogitgrado.webp" alt="SIERRA 276 SOGIT Grado">
             <p>MAN TGE 3.180 Allestita Olmedo - SIERRA 276 - SOGIT Grado</p>
-        </div>
-
-        <div class="grid-item">
-            <img src="assets/mezzi/nissannavara-vvfgorizia.jpg" alt="Nissan Navara VVF Gorizia">
-            <p>Nissan Navara Allestito BAI - VVF Gorizia</p>
         </div>
     </div>
     <p>Per vedere altre foto visita il nostro <a href="https://www.instagram.com/friuliemergenze" target="_blank">profilo Instagram</a> oppure vai alla <a href="/gallery">Galleria Immagini</a></p>
@@ -118,8 +113,19 @@
 
     // Evidenziazione pagina attiva
     const links = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+
+    console.log('✅ Current path:', currentPath);
+
     links.forEach(link => {
-      if (link.href === window.location.href || window.location.pathname.includes(link.getAttribute('href'))) {
+      const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+      console.log('🔗 Link:', link.href, '| Path:', linkPath);
+
+      if (currentPath === '' && linkPath === '/') {
+        console.log('🏠 Home matched');
+        link.classList.add('active');
+      } else if (currentPath !== '' && linkPath === currentPath) {
+        console.log('✅ Exact match for:', linkPath);
         link.classList.add('active');
       }
     });
