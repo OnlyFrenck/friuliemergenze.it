@@ -20,9 +20,9 @@
       <ul class="nav-links">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/gallery" class="nav-link">Galleria</a></li>
-        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
-        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="/mediakit" class="nav-link active">Media Kit</a></li>
         <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
       </ul>
     </div>
@@ -74,7 +74,7 @@
     <section class="contact">
       <div class="content">
         <h2>📬 Contatti per media & partnership</h2>
-        <p>✉️ <a href="mailto:press@friuliemergenze.it">press@friuliemergenze.it</a></p>
+        <p>✉️ <a href="mailto:ufficiostampa@friuliemergenze.it">ufficiostampa@friuliemergenze.it</a></p>
         <p>📞 <a href="https://t.me/FriuliEmergenze">Contatto Telegram</a></p>
       </div>
     </section>
@@ -107,14 +107,6 @@
     // Toggle mobile menu
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('open');
-    });
-
-    // Evidenziazione pagina attiva
-    const links = document.querySelectorAll('.nav-link');
-    links.forEach(link => {
-      if (link.href === window.location.href || window.location.pathname.includes(link.getAttribute('href'))) {
-        link.classList.add('active');
-      }
     });
   </script>
 

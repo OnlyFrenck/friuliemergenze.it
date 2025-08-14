@@ -18,11 +18,11 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/" class="nav-link active">Home</a></li>
         <li><a href="/gallery" class="nav-link">Galleria</a></li>
-        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
         <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
       </ul>
     </div>
@@ -42,14 +42,14 @@
   <section class="partners">
     <h2>🤝 Collaborazioni</h2>
     <p>Lavoriamo con volontari, croci locali e servizi di emergenza per valorizzare il territorio.</p>
-    <p>Se vuoi collaborare con noi, anche per inviarci regolarmente foto di mezzi puoi contattarci a: <a href="mailto:sponsor@friuliemergenze.it">sponsor@friuliemergenze.it</a></p>
+    <p>Se vuoi collaborare con noi, anche per inviarci regolarmente foto di mezzi puoi contattarci a: <a href="mailto:spotter@friuliemergenze.it">spotter@friuliemergenze.it</a></p>
   </section>
 
   <section class="gallery">
     <h2>🚒 Galleria</h2>
     <div class="grid">
         <div class="grid-item">
-            <img src="assets/mezzi/sierra271-sogitgrado.png" alt="SIERRA 271 SOGIT Grado">
+            <img src="assets/mezzi/sierra271-sogitgrado.jpg" alt="SIERRA 271 SOGIT Grado">
             <p>MAN TGE 3.180 Allestita Mariani Fratelli - SIERRA 271 - SOGIT Grado</p>
         </div>
 
@@ -59,8 +59,8 @@
         </div>
 
         <div class="grid-item">
-            <img src="assets/mezzi/sierra276-sogitgrado.webp" alt="SIERRA 276 SOGIT Grado">
-            <p>MAN TGE 3.180 Allestita Olmedo - SIERRA 276 - SOGIT Grado</p>
+            <img src="assets/mezzi/sierra76-sogitgrado.webp" alt="SIERRA 276 SOGIT Grado">
+            <p>MAN TGE 3.180 Allestita Olmedo - SIERRA 76 - SOGIT Grado</p>
         </div>
     </div>
     <p>Per vedere altre foto visita il nostro <a href="https://www.instagram.com/friuliemergenze" target="_blank">profilo Instagram</a> oppure vai alla <a href="/gallery">Galleria Immagini</a></p>
@@ -75,7 +75,7 @@
 
   <section class="contact">
     <h2>📬 Contatti & Social</h2>
-    <p>Puoi contattare lo staff di FriuliEmergenze scrivendo a <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a></p>
+    <p>Puoi contattare lo staff di FriuliEmergenze scrivendo a <a href="mailto:luca@friuliemergenze.it">luca@friuliemergenze.it</a></p>
   </section>
 
   <footer>
@@ -109,25 +109,6 @@
     // Toggle mobile menu
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('open');
-    });
-
-    // Evidenziazione pagina attiva
-    const links = document.querySelectorAll('.nav-link');
-    const currentPath = window.location.pathname.replace(/\/$/, '');
-
-    console.log('✅ Current path:', currentPath);
-
-    links.forEach(link => {
-      const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
-      console.log('🔗 Link:', link.href, '| Path:', linkPath);
-
-      if (currentPath === '' && linkPath === '/') {
-        console.log('🏠 Home matched');
-        link.classList.add('active');
-      } else if (currentPath !== '' && linkPath === currentPath) {
-        console.log('✅ Exact match for:', linkPath);
-        link.classList.add('active');
-      }
     });
   </script>
 

@@ -482,3 +482,126 @@ a i.fas {
 .cta-button:hover {
   background-color: #1ebc5a;
 }
+
+.btn-scopri {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #00bcd4;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn-scopri:hover {
+  background-color: #0097a7;
+}
+
+/* Pagina singolo mezzo */
+.scheda-mezzo {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.scheda-mezzo h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.scheda-mezzo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.dettagli-mezzo {
+  background-color: #282829;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.dettagli-mezzo h2 {
+  margin-bottom: 0.8rem;
+}
+
+.dettagli-mezzo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dettagli-mezzo li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.dettagli-mezzo li:last-child {
+  border-bottom: none;
+}
+
+/* Bottone indietro */
+.btn-indietro {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-indietro:hover {
+  background-color: #0097a7;
+}
+
+/* === COME DIVENTARE SPOTTER === */
+.mediakit .cta-button {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 32px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mediakit .cta-button:hover {
+  background-color: #008ba3;
+}
+
+.mediakit section {
+  margin-bottom: 2.5rem;
+}
+
+.mediakit h1, 
+.mediakit h2 {
+  color: #00bcd4;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .mediakit {
+    padding: 1.2rem;
+  }
+
+  .mediakit h1 {
+    font-size: 2rem;
+  }
+
+  .mediakit h2 {
+    font-size: 1.3rem;
+  }
+
+  .mediakit p, 
+  .mediakit ul li {
+    font-size: 1rem;
+  }
+}

@@ -18,11 +18,10 @@
       <ul class="nav-links">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/gallery" class="nav-link">Galleria</a></li>
-        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
-        <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/spotters" class="nav-link active">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
         <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://wa.me/393276538156" target="_blank" class="nav-icon"><i class="fab fa-whatsapp"></i></a></li>
       </ul>
     </div>
   </nav>
@@ -46,8 +45,13 @@
 
     <section class="cta-spotter">
         <h2>📸 Vuoi diventare uno spotter ufficiale?</h2>
-        <p>Se condividi la nostra passione per i mezzi di soccorso e vuoi contribuire con i tuoi scatti, contattaci!</p>
-        <a href="https://t.me/FriuliEmergenze" class="cta-button" target="_blank">Contattaci su Telegram</a>
+        <p>Se condividi la nostra passione per i mezzi di soccorso e vuoi contribuire con i tuoi scatti, clicca il bottone qua sotto per sapere come fare!</p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="/come-diventare-spotter/" 
+              style="display: inline-block; background-color: #00bcd4; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">
+              => Segui queste istruzioni
+          </a>
+      </div>
     </section>
   </main>
 
@@ -58,12 +62,6 @@
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if (window.location.pathname.includes(link.getAttribute('href'))) {
-        link.classList.add('active');
-      }
     });
   </script>
 </body>
