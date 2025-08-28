@@ -497,6 +497,28 @@ a i.fas {
   background-color: #0097a7;
 }
 
+.gallery-search {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.gallery-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.7rem 1rem;
+  border: 1px solid #444;
+  border-radius: 32px;
+  background: #111;
+  color: #f0f0f0;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.gallery-search input:focus {
+  border-color: #00bcd4;
+}
+
 /* Pagina singolo mezzo */
 .scheda-mezzo {
   max-width: 900px;

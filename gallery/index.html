@@ -47,6 +47,10 @@
     </section>
 
     <section class="gallery">
+      <div class="gallery-search">
+        <input type="text" id="searchInput" placeholder="🔍 Cerca un mezzo...">
+      </div>
+
       <div class="grid">
         <div class="grid-item" data-category="ambulanze">
           <a href="/assets/mezzi/sierra271-sogitgrado.jpg" data-lightbox="mezzi" data-title="MAN TGE 3.180 - SIERRA 271 - SOGIT Grado">
@@ -218,6 +222,19 @@
             item.style.display = 'none';
           }
         });
+      });
+    });
+  </script>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const galleryItems = document.querySelectorAll('.grid-item'); 
+
+    searchInput.addEventListener('keyup', () => {
+      const filter = searchInput.value.toLowerCase();
+      galleryItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
       });
     });
   </script>
