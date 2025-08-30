@@ -191,8 +191,24 @@
           <a href="/assets/mezzi/cp846-guardiacostieragrado.jpg" data-lightbox="mezzi" data-title="Charlie Papa 846 - Guardia Costiera Grado">
             <img src="/assets/mezzi/cp846-guardiacostieragrado.jpg" alt="Charlie Papa 846 Guardia Costiera Grado">
           </a>
-          <p>Charlie Papa 881 - Guardia Costiera Trieste</p>
+          <p>Charlie Papa 846 - Guardia Costiera Trieste</p>
           <a href="/gallery/scheda/charliepapa846-gcgrado/" class="btn-scopri">Scopri di più</a>
+        </div>
+
+        <div class="grid-item" data-category="carabinieri">
+            <a href="/assets/mezzi/cc7801-ccvenezia.jpg" data-lightbox="mezzi" data-title="CC-78-01 - Carabinieri Venezia">
+              <img src="/assets/mezzi/cc7801-ccvenezia.jpg" alt="CC-78-01 Carabinieri Venezia">
+            </a>
+            <p>CC-78-01 - Carabinieri Venezia</p>
+            <a href="/gallery/scheda/cc7801-ccvenezia/" class="btn-scopri">Scopri di più</a>
+        </div>
+
+        <div class="grid-item" data-category="carabinieri">
+            <a href="/assets/mezzi/jeeprenegade-ccgrado.jpg" data-lightbox="mezzi" data-title="Jeep Renegade - Carabinieri Grado">
+              <img src="/assets/mezzi/jeeprenegade-ccgrado.jpg" alt="Jeep Renegade Carabinieri Grado">
+            </a>
+            <p>Jeep Renegade - Carabinieri Grado</p>
+            <a href="/gallery/scheda/jeeprenegade-ccgrado/" class="btn-scopri">Scopri di più</a>
         </div>
       </div>
     </section>
@@ -236,6 +252,33 @@
         const text = item.textContent.toLowerCase();
         item.style.display = text.includes(filter) ? '' : 'none';
       });
+    });
+  </script>
+
+  <!-- In gallery.html -->
+  <script type="module">
+    import { app } from '/admin/firebase.js';
+    import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+    const db = getFirestore(app);
+
+    const container = document.querySelector('.grid'); // la tua griglia
+
+    const q = query(collection(db, 'gallery'), orderBy('createdAt', 'desc'));
+    const snap = await getDocs(q);
+    container.innerHTML = '';
+    snap.forEach(doc => {
+      const d = doc.data();
+      const el = document.createElement('div');
+      el.className = 'grid-item';
+      el.setAttribute('data-category', d.category || '');
+      el.innerHTML = `
+        <a href="${d.imageUrl}" data-lightbox="mezzi" data-title="${d.title || ''}">
+          <img src="${d.imageUrl}" alt="${d.title || ''}">
+        </a>
+        <p>${d.title || ''}</p>
+        <!-- opzionale: link alla scheda se salvi anche uno slug -->
+      `;
+      container.appendChild(el);
     });
   </script>
 
