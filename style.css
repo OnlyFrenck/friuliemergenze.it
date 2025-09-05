@@ -663,3 +663,74 @@ a i.fas {
   max-width: 150px;
   margin-bottom: 20px;
 }
+
+/* Stile Sezione Novità WhatsApp */
+.novita-section {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.novita-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.novita-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007c3f;
+  text-transform: capitalize;
+}
+
+.novita-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.novita-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.novita-section ul li {
+  margin: 10px 0;
+  font-size: 16px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.novita-section ul li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .novita-section h2 {
+    font-size: 22px;
+  }
+
+  .novita-section p,
+  .novita-section ul li {
+    font-size: 14px;
+  }
+}
