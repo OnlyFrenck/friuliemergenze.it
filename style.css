@@ -708,6 +708,15 @@ a i.fas {
   left: 0;
 }
 
+.btns-wa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .btn-whatsapp {
   display: inline-block;
   background-color: #25D366;
@@ -723,10 +732,19 @@ a i.fas {
   background-color: #1ebe5d;
 }
 
-.qr-code {
-  margin-top: 20px;
-  width: 150px;
-  height: 150px;
+.btn-regwa {
+  display: inline-block;
+  background-color: #0d64d6;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-regwa:hover {
+  background-color: #0821b3;
 }
 
 /* Responsive */
