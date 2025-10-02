@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Bando Staff - Friuli Emergenze</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/gallery" class="nav-link">Galleria</a></li>
+        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
+        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <img src="/assets/logo.png" alt="FriuliEmergenze" class="logo">
+    <h1>Bando Staff WhatsApp</h1>
+    <p>Vuoi entrare nello staff di FriuliEmergenze? Compila il modulo e candidati!</p>
+  </header>
+
+  <section class="mediakit fade-in">
+    <div class="content">
+      <h2>Chi cerchiamo?</h2>
+      <p>Il nostro gruppo WhatsApp è in crescita e stiamo cercando persone motivate a supportare la community con professionalità, passione e spirito di collaborazione.</p>
+
+      <h2>Requisiti principali</h2>
+      <ul>
+        <li>Età minima 12 anni</li>
+        <li>Interesse per il settore emergenze / volontariato</li>
+        <li>Disponibilità a moderare chat e contenuti</li>
+        <li>Spirito di squadra e collaborazione</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mediakit fade-in">
+    <div class="content">
+      <h2>Modulo di candidatura</h2>
+      <p>Compila tutti i campi richiesti. Lo staff valuterà la tua richiesta e ti contatterà.</p>
+
+      <form id="staffForm">
+        <label for="nome">Nome e Cognome *</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="eta">Età *</label><br>
+        <input type="number" id="eta" name="eta" required><br><br>
+
+        <label for="email">Email *</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="motivazione">Perché vuoi entrare nello staff? *</label><br>
+        <textarea id="motivazione" name="motivazione" rows="5" required></textarea><br><br>
+
+        <button type="submit" class="cta-button">Invia candidatura</button>
+      </form>
+
+      <p id="formMessage" style="margin-top:1rem; color:#00bcd4;"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 FriuliEmergenze - Tutti i diritti riservati</p>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  <script type="module" src="./staff.js"></script>
+  <script>
+    // Toggle mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

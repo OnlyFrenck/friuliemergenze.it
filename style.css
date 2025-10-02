@@ -747,6 +747,89 @@ a i.fas {
   background-color: #0821b3;
 }
 
+/* Novità MyFrEM */
+#novita-myfrem {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#novita-myfrem .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#novita-myfrem h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #141fbb;
+  text-transform: capitalize;
+}
+
+#novita-myfrem p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+#novita-myfrem ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+#novita-myfrem ul li {
+  margin: 10px 0;
+  font-size: 16px;
+  position: relative;
+  padding-left: 25px;
+}
+
+#novita-myfrem ul li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+}
+
+.btns-frem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-myfrem {
+  display: inline-block;
+  background-color: #1a72ac;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-myfrem:hover {
+  background-color: #042135;
+}
+
+.btn-regmyfrem {
+  display: inline-block;
+  background-color: #1e859e;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-regmyfrem:hover {
+  background-color: #073a74;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .novita-section h2 {
@@ -756,5 +839,91 @@ a i.fas {
   .novita-section p,
   .novita-section ul li {
     font-size: 14px;
+  }
+}
+
+/* Contenitore del form */
+#staffForm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Label */
+#staffForm label {
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Input e textarea */
+#staffForm input,
+#staffForm textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: #f9f9f9;
+}
+
+/* Effetto focus */
+#staffForm input:focus,
+#staffForm textarea:focus {
+  outline: none;
+  border-color: #00bcd4;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0,188,212,0.2);
+}
+
+/* Textarea */
+#staffForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Bottone invio */
+#staffForm button {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.3s ease;
+}
+
+/* Hover bottone */
+#staffForm button:hover {
+  background: linear-gradient(135deg, #0097a7, #006064);
+  transform: translateY(-2px);
+}
+
+/* Messaggio di stato */
+#formMessage {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #staffForm {
+    padding: 1.2rem;
+  }
+
+  #staffForm button {
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 }
