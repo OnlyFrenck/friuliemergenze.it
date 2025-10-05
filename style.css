@@ -267,24 +267,6 @@ footer {
   color: #aaa;
 }
 
-/* Consiglia un colore per h5 che non sia 666 e nemmeno d45500 e nemmeno 00bcd4 e nemmeno arancione */
-
-.dettagli-mezzo h5 {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #265aa7;
-}
-
-.dettagli-mezzo h5 a {
-  color: #00bcd4;
-  text-decoration: none;
-}
-
-.dettagli-mezzo h5 a:hover {
-  text-decoration: underline;
-  color: #0097a7;
-}
-
 /* === MEDIA KIT === */
 
 .mediakit {
