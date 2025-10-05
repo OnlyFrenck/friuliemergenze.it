@@ -51,12 +51,12 @@
         <p>Puoi scaricare il nostro logo ufficiale per utilizzo su stampa, articoli e materiale digitale. Disponibile in versione PNG e SVG.</p>
         <ul>
           <li>
-            <a href="https://friuliemergenze.it/assets/loghi/friuliemergenze-logo.png" download="/assets/loghi/logo-friuliemergenze.png" type="image/png">
+            <a href="?download=logo-png" onclick="forceDownload('/assets/loghi/friuliemergenze-logo.png', 'friuliemergenze-logo.png')">
               <i class="fas fa-download"></i> 📁 Scarica logo PNG
             </a>
           </li>
           <li>
-            <a href="https://friuliemergenze.it/assets/loghi/friuliemergenze-logo.svg" download="/assets/loghi/logo-friuliemergenze.svg" type="image/png">
+            <a href="?download=logo-svg" onclick="forceDownload('/assets/loghi/friuliemergenze-logo.svg', 'friuliemergenze-logo.svg')">
               <i class="fas fa-download"></i> 📁 Scarica logo SVG
             </a>
           </li>
@@ -82,6 +82,16 @@
         <p>📞 <a href="https://t.me/FriuliEmergenze">Contatto Telegram</a></p>
       </div>
     </section>
+
+    <footer>
+      <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+      <p>
+        <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> · 
+        <a href="/cookie-policy">Cookie Policy</a> · 
+        <a href="/privacy-policy" target="_blank">Privacy Policy</a> · 
+        <a href="https://friuliemergenze.it/contact-us" target="_blank">Contatti</a>
+      </p>
+    </footer>
   </main>
 
   <script>
@@ -105,6 +115,18 @@
         });
       }
     });
+
+    // Forza il download
+    function forceDownload(url, filename) {
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          link.click();
+        });
+    } 
   </script>
 
   <script>

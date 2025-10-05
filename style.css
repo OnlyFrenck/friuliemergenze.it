@@ -215,6 +215,26 @@ a {
   border: none;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00bcd4;
+}
+
+h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #d45500;
+}
+
+.gallery h5 a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #20a72b;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
 ul.socials {
   list-style: none;
   padding: 0;
