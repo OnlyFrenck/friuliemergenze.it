@@ -56,6 +56,10 @@
       <input type="text" id="searchInput" placeholder="Cerca un mezzo..." style="width:100%;padding:0.75rem;margin:1rem 0;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
     </div>
 
+    <div class="gallery-count">
+      Mezzi totali: <span id="mezziCount">0</span>
+    </div>
+
     <section class="gallery">
       <div class="grid">
         <div class="grid-item" data-category="soccorso-sanitario">
@@ -312,6 +316,19 @@
   </footer>
 
   <script>
+    function aggiornaConteggio() {
+      const mezziVisibili = document.querySelectorAll('.grid-item');
+      document.getElementById('mezziCount').textContent = mezziVisibili.length;
+    }
+
+    // Aggiorna al caricamento iniziale
+    document.addEventListener('DOMContentLoaded', aggiornaConteggio);
+
+    // Aggiorna anche dopo il caricamento da Firebase
+    document.addEventListener('galleryUpdated', aggiornaConteggio);
+  </script>
+
+  <script>
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const gridItems = document.querySelectorAll('.grid-item');
 
@@ -348,7 +365,6 @@
     });
   </script>
 
-  <!-- In gallery.html -->
   <script type="module">
     import { app } from '/admin/firebase.js';
     import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
@@ -369,10 +385,12 @@
           <img src="${d.imageUrl}" alt="${d.title || ''}">
         </a>
         <p>${d.title || ''}</p>
-        <!-- opzionale: link alla scheda se salvi anche uno slug -->
       `;
       container.appendChild(el);
     });
+
+    // Aggiorna il contatore dopo aver popolato la griglia
+    document.dispatchEvent(new Event('galleryUpdated'));
   </script>
 
   <script>
