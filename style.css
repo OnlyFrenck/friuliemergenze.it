@@ -231,8 +231,13 @@ h2 {
 
 h5 {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
   color: #d45500;
+}
+
+.gallery h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #7ac44f;
 }
 
 .gallery h5 a {
