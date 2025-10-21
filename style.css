@@ -481,6 +481,21 @@ a i.fas {
   background-color: #c72c61;
 }
 
+.wa-link {
+  display: inline-block;
+  color: #f0f0f0;
+  background-color: #25b119;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.wa-link:hover {
+  background-color: #2d8f3a;
+}
+
 .cta-spotter {
   text-align: center;
   margin-top: 3rem;
