@@ -52,6 +52,14 @@
       <button data-filter="esercito">Esercito Italiano</button>
     </section>
 
+    <section class="filter-spotters">
+      <button data-spotter="all" class="active">Tutti</button>
+      <button data-spotter="rescuespotter_ts">rescuespotter_ts</button>
+      <button data-spotter="verona_emergency112">verona_emergency112</button>
+      <button data-spotter="malcus08">malcus08</button>
+      <button data-spotter="s.o.s_italia">s.o.s_italia</button>
+    </section>
+
     <div class="gallery-search">
       <input type="text" id="searchInput" placeholder="Cerca un mezzo..." style="width:100%;padding:0.75rem;margin:1rem 0;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
     </div>
@@ -270,7 +278,7 @@
           <a href="/gallery/scheda/fiattipo2-ccgrado/" class="btn-scopri">Scopri di più</a>
         </div>
 
-        <div class="grid-item" data-category="esercito">
+        <div class="grid-item" data-category="esercito" data-spotter="s.o.s_italia">
           <a href="/assets/mezzi/jeepwrangler-esercito.jpg" data-lightbox="mezzi" data-title="Jeep Wrangler J8 - Esercito Italiano">
             <img src="/assets/mezzi/jeepwrangler-esercito.jpg" alt="Jeep Wrangler J8 Esercito Italiano">
           </a>
@@ -278,7 +286,7 @@
           <a href="/gallery/scheda/jeepwrangler-esercitoitaliano/" class="btn-scopri">Scopri di più</a>
         </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
+        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="verona_emergency112">
           <a href="/assets/mezzi/volskwagencrafter-cripalmanova.jpg" data-lightbox="mezzi" data-title="Volkswagen Crafter - CRI Palmanova">
             <img src="/assets/mezzi/volskwagencrafter-cripalmanova.jpg" alt="Volkswagen Crafter CRI Palmanova">
           </a>
@@ -286,7 +294,7 @@
           <a href="/gallery/scheda/volkswagencrafter-cripalmanova/" class="btn-scopri">Scopri di più</a>
         </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
+        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="verona_emergency112">
           <a href="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg" data-lightbox="mezzi" data-title="Fiat Ducato QTX - Croce Verde Cervignano">
             <img src="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg" alt="Fiat Ducato QTX Croce Verde Cervignano">
           </a>
@@ -294,7 +302,7 @@
           <a href="/gallery/scheda/fiatducatoqtx-cvcervignano/" class="btn-scopri">Scopri di più</a>
         </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
+        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="malcus08">
           <a href="/assets/mezzi/icrew-elifvg.jpg" data-lightbox="mezzi" data-title="I-CREW - Elisoccorso Friuli Venezia Giulia">
             <img src="/assets/mezzi/icrew-elifvg.jpg" alt="I-CREW Elisoccorso Friuli Venezia Giulia">
           </a>
@@ -310,7 +318,7 @@
           <a href="/gallery/scheda/fiatducatox290-asufc_ocpalmanova/" class="btn-scopri">Scopri di più</a>
         </div>
 
-        <div class="grid-item" data-category="vvf">
+        <div class="grid-item" data-category="vvf" data-spotter="rescuespotter_ts">
           <a href="/assets/mezzi/fordranger-vvftrieste.jpg" data-lightbox="mezzi" data-title="Ford Ranger - VVF Trieste">
             <img src="/assets/mezzi/fordranger-vvftrieste.jpg" alt="Ford Ranger VVF Trieste">
           </a>
@@ -332,6 +340,22 @@
   </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const spotterParam = urlParams.get('spotter'); // legge ?spotter=Nome+Spotter
+
+      if (spotterParam) {
+        const spotterButtons = document.querySelectorAll('.filter-spotters button');
+        spotterButtons.forEach(btn => {
+          if (btn.getAttribute('data-spotter') === spotterParam) {
+            btn.click(); // simula il click sul pulsante corretto
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
     function aggiornaConteggio() {
       const mezziVisibili = document.querySelectorAll('.grid-item');
       document.getElementById('mezziCount').textContent = mezziVisibili.length;
@@ -345,27 +369,59 @@
   </script>
 
   <script>
-    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const categoryButtons = document.querySelectorAll('.filter-buttons button');
+    const spotterButtons = document.querySelectorAll('.filter-spotters button'); // nuova sezione
     const gridItems = document.querySelectorAll('.grid-item');
 
-    filterButtons.forEach(button => {
+    let activeCategory = 'all';
+    let activeSpotter = 'all';
+
+    // Funzione che applica entrambi i filtri
+    function applyFilters() {
+      let visibleCount = 0;
+
+      gridItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        const spotter = item.getAttribute('data-spotter');
+
+        const showCategory = (activeCategory === 'all' || category === activeCategory);
+        const showSpotter = (activeSpotter === 'all' || spotter === activeSpotter);
+
+        if (showCategory && showSpotter) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Aggiorna contatore se presente
+      const counter = document.getElementById('mezziCount');
+      if(counter) counter.textContent = visibleCount;
+    }
+
+    // --- Filtra per categoria ---
+    categoryButtons.forEach(button => {
       button.addEventListener('click', () => {
-        // Cambia lo stato attivo
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-
-        const filter = button.getAttribute('data-filter');
-
-        gridItems.forEach(item => {
-          const category = item.getAttribute('data-category');
-          if (filter === 'all' || filter === category) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        activeCategory = button.getAttribute('data-filter');
+        applyFilters();
       });
     });
+
+    // --- Filtra per spotter ---
+    spotterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        spotterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        activeSpotter = button.getAttribute('data-spotter');
+        applyFilters();
+      });
+    });
+
+    // Applica filtro iniziale
+    applyFilters();
   </script>
 
   <script>
