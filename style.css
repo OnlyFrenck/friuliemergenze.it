@@ -1063,3 +1063,88 @@ a i.fas {
 .tiktok {
   background-color: #010101;
 }
+
+/* === STORICO ALLERTE === */
+.storico-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.storico-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.storico-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 105%;
+  box-shadow: 0 4px 15px rgba(0,188,212,0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.storico-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,188,212,0.25);
+}
+
+.storico-card img {
+  width: 100%;
+  height: 512px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.storico-card h3 {
+  font-size: 1.2rem;
+  color: #00bcd4;
+  margin: 0.5rem 0;
+}
+
+.storico-card p {
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  margin: 0.4rem 0;
+}
+
+.storico-card a.btn-pdf {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.storico-card a.btn-pdf:hover {
+  background-color: #0097a7;
+}
+
+/* STORICO VUOTO */
+.storico-empty {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,188,212,0.15);
+}
+
+.storico-empty h3 {
+  color: #00bcd4;
+  margin-bottom: 1rem;
+}
+
+.storico-empty p {
+  color: #f0f0f0;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}

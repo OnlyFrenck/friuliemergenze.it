@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allerte Meteo – Friuli Emergenze</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery" class="nav-link">Galleria</a></li>
+        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
+        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
+    <h1>Allerte Meteo</h1>
+    <p>Situazione aggiornata - Friuli Venezia Giulia</p>
+  </header>
+
+  <!-- ALLERTA CARD -->
+  <section class="contact-info">
+    <h2>⚠️ Ultima allerta registrata:</h2>
+
+    <p>⚠️ NESSUNA ALLERTA METEO IN CORSO.</p>
+
+    <div class="allerta-card" style="
+      background:#1c1c1c;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 1.2rem;
+      box-shadow: 0 0 15px rgba(0,188,212,0.15);
+    ">
+
+      <!-- IMMAGINE ALLERTA -->
+      <img src="/assets/allerte-meteo/photos/25-2025.jpg" 
+           alt="Immagine Allerta" 
+           style="width:100%; border-radius:12px; margin-bottom:1rem;">
+
+      <!-- TITOLO ALLERTA -->
+      <h3 style="color:#00bcd4; margin-top:0;">
+        ALLERTA ARANCIONE
+      </h3>
+
+      <!-- TESTO ALLERTA -->
+      <p>
+        DALLE 12 DEL 17/11/2025 ALLE 12 DEL 18/11/2025 ALLERTA GIALLA IDROGEOLOGICA SU FVG-B, E ARANCIONE IDRAULICA E IDROGEOLOGICA SU FVG-C PER PIOGGE MODERATE E LOCALMENTE INTENSE
+      </p>
+
+      <!-- VALIDITÀ -->
+      <p><strong>Validità:</strong> dal 17/11 ore 12 al 18/11 ore 12</p>
+
+      <!-- LINK PDF -->
+      <p>
+        <a href="/assets/allerte-meteo/documenti-cfd/25-2025.pdf" target="_blank" style="color:#00bcd4;">
+          📄 Apri documento ufficiale
+        </a>
+      </p>
+
+      <p><strong>ATTENZIONE:</strong> Queste informazioni sono state recuperate dai canali social della Protezione Civile FVG. FriuliEmergenze non si assume alcuna responsabilità in caso di errore.</p>
+
+    </div>
+  </section>
+
+  <!-- LEGENDA COLORI -->
+  <section class="contact-channels">
+    <h2>🎨 Livelli di allerta</h2>
+    <ul class="contact-list">
+      <li><strong style="color:#25ff3a">🟢 Verde</strong> – Nessuna criticità</li>
+      <li><strong style="color:#e9d100">🟡 Gialla</strong> – Fenomeni localizzati</li>
+      <li><strong style="color:#ff7b00">🟠 Arancione</strong> – Possibili rischi diffusi</li>
+      <li><strong style="color:#ff2e00">🔴 Rossa</strong> – Elevato rischio, fenomeni intensi</li>
+    </ul>
+  </section>
+
+  <!-- CONSIGLI -->
+  <section class="contact-hours">
+    <h2>ℹ️ Consigli utili</h2>
+    <p>Seguire sempre le indicazioni della Protezione Civile FVG.</p>
+    <p>Evita gli spostamenti non necessari in caso di allerta arancione o rossa.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+    <p>
+      <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
+      <a href="/cookie-policy">Cookie Policy</a> ·
+      <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
+      <a href="/contact-us" target="_blank">Contatti</a>
+    </p>
+  </footer>
+
+  <!-- TRANSITION SCRIPT -->
+  <script>
+    document.body.classList.add('fade-in');
+
+    document.querySelectorAll('a[href]').forEach(link => {
+      const target = link.getAttribute('target');
+      if (!target || target === '_self') {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href.startsWith('#')) return;
+
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => { window.location.href = href; }, 300);
+        });
+      }
+    });
+  </script>
+
+  <!-- MENU MOBILE -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

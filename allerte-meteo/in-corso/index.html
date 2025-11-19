@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allerte Meteo in Corso – Friuli Emergenze</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery" class="nav-link">Galleria</a></li>
+        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
+        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
+    <h1>Allerta in corso</h1>
+    <p>Situazione aggiornata - Friuli Venezia Giulia</p>
+  </header>
+
+  <!-- ALLERTA CARD -->
+  <section class="contact-info">
+    <div style="
+        background:#1c1c1c;
+        padding:2rem;
+        border-radius:12px;
+        margin:1.2rem auto;
+        max-width:800px;
+        text-align:center;
+        box-shadow:0 0 15px rgba(0,188,212,0.15);
+    ">
+        <h3 style="color:#00bcd4; margin-top:0;">Nessuna allerta in corso</h3>
+        <p>Al momento non ci sono allerte meteo attive in Friuli Venezia Giulia.</p>
+        <p>Consulta lo <a href="/allerte-meteo/storico" style="color:#00bcd4;">storico allerte</a> per le allerte passate.</p>
+        <img src="/assets/allerte-meteo/logo-pcfvg.jpg" alt="Nessuna allerta" style="width:50%; margin-top:1rem; border-radius:12px;">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+    <p>
+      <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
+      <a href="/cookie-policy">Cookie Policy</a> ·
+      <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
+      <a href="/contact-us" target="_blank">Contatti</a>
+    </p>
+  </footer>
+
+  <script>
+    document.body.classList.add('fade-in');
+    document.querySelectorAll('.menu-toggle').forEach(btn=>{
+      btn.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>

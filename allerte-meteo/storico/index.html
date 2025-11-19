@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storico Allerte Meteo – Friuli Emergenze</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery" class="nav-link">Galleria</a></li>
+        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+        <li><a href="/spotters" class="nav-link">Spotters</a></li>
+        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
+        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
+    <h1>Storico Allerte Meteo</h1>
+    <p>Tutte le allerte precedenti - Friuli Venezia Giulia</p>
+  </header>
+
+  <!-- GRIGLIA ALLERTE -->
+  <section class="storico-container">
+    <div class="storico-grid">
+      <!-- BLOCCO -->
+      <div class="storico-card">
+        <img src="/assets/allerte-meteo/photos/25-2025.jpg" alt="Allerta" />
+        <h3>ALLERTA NUMERO 25/2025</h3>
+        <p>DALLE 12 DEL 17/11/2025 ALLE 12 DEL 18/11/2025 ALLERTA GIALLA IDROGEOLOGICA SU FVG-B, E ARANCIONE IDRAULICA E IDROGEOLOGICA SU FVG-C PER PIOGGE MODERATE E LOCALMENTE INTENSE</p>
+        <p><strong>Validità:</strong> 17/11 ore 12 - 18/11 ore 12</p>
+        <a href="/assets/allerte-meteo/documenti-cfd/25-2025.pdf" target="_blank" class="btn btn-scopri">Apri PDF</a>
+        <a href="/allerte-meteo/allerta/25-2025/" target="_blank" class="btn btn-scopri">Apri dettaglio allerta</a>
+      </div>
+      <!-- FINE BLOCCO -->
+      <!-- BLOCCO -->
+      <div class="storico-card">
+        <img src="/assets/allerte-meteo/photos/24-2025.jpg" alt="Allerta" />
+        <h3>ALLERTA NUMERO 24/2025</h3>
+        <p>DALLE 00:00 ALLE 12:00 DEL 17/11 ALLERTA GIALLA IDROGEOLOGICA SU FVG-B, GIALLA SU FVG-C E FVG-D PER RISCHIO IDRAULICO COSTIERO PER ACQUA ALTA E MAREGGIATE NELLA MATTINA DI DOMANI</p>
+        <p><strong>Validità:</strong> 17/11 ore 00 - 17/11 ore 12</p>
+        <a href="/assets/allerte-meteo/documenti-cfd/24-2025.pdf" target="_blank" class="btn btn-scopri">Apri PDF</a>
+        <a href="/allerte-meteo/allerta/24-2025/" target="_blank" class="btn btn-scopri">Apri dettaglio allerta</a>
+      </div>
+      <!-- FINE BLOCCO -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+    <p>
+      <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
+      <a href="/cookie-policy">Cookie Policy</a> ·
+      <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
+      <a href="/contact-us" target="_blank">Contatti</a>
+    </p>
+  </footer>
+
+  <script>
+    document.body.classList.add('fade-in');
+    document.querySelectorAll('.menu-toggle').forEach(btn=>{
+      btn.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
